@@ -14,7 +14,8 @@ const book = {
 console.log(bookObject);
 }
 
-document.getElementById('Add').addEventListener('click', () => {
+function addBook() {
+    document.getElementById('Add').addEventListener('click', () => {
     let table = document.getElementById('books');
     let row = table.insertRow(1);
     row.setAttribute('id', `item-${id}`);
@@ -24,18 +25,19 @@ document.getElementById('Add').addEventListener('click', () => {
     let action = row.insertCell(3);
     action.appendChild(createDeleteButton(id++));
     document.getElementById("Author").value = " ";
+    document.getElementById("Title").value = " ";
+    document.getElementById("Rating").value = " ";
     // const bookObject = document.getElementById('form').value;
     const description = document.getElementById("Author", "Title", "Rating");
     const book = {
         Author: 'Author',
         Title: 'Title',
         Rating: 'Rating',
-    }
+        }
+    })
+}
 
-
-    
-})
-
+addBook();
 
 
 
