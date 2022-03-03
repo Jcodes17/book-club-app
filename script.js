@@ -2,6 +2,8 @@ let id = 0;
 const books = [];
 
 
+console.log("Testing");
+
  
 function bookInfo() {
     const bookObject = document.getElementById('books').value;
