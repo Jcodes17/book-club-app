@@ -1,18 +1,20 @@
 let id = 0;
 const books = [];
-
+var Author = document.getElementById("Author").value || "none";
+var Title = document.getElementById("Title").value || 0;
+var Rating = document.getElementById("Rating").value || 0;
 console.log("Testing");
 
-function bookInfo() {
-  const bookObject = document.getElementById("books").value;
-  const description = document.getElementById("Author", "Title", "Rating");
-  const book = {
-    Author: Author,
-    Title: Title,
-    Rating: Rating,
-  };
-  console.log(bookObject);
-}
+// function bookInfo() {
+//   const bookObject = document.getElementById("books").value;
+//   const description = document.getElementById("Author", "Title", "Rating");
+//   const book = {
+//     Author: Author,
+//     Title: Title,
+//     Rating: Rating,
+//   };
+//   console.log(bookObject);
+// }
 
 function addBook() {
   document.getElementById("Add").addEventListener("click", () => {
@@ -22,20 +24,21 @@ function addBook() {
     row.insertCell(0).innerHTML = document.getElementById("Author").value;
     row.insertCell(1).innerHTML = document.getElementById("Title").value;
     row.insertCell(2).innerHTML = document.getElementById("Rating").value;
+    row.insertCell(3).innerHTML = '<button type="button" onClick="editProduct(\''+ Author+'\', \''+Title+'\', \''+Rating+'\');"/>Edit</button>'; 
     let action = row.insertCell(3);
     action.appendChild(createDeleteButton(id++));
-    let update = row.insertCell(4);
-    action.appendChild(createUpdateButton(id++));
+    // let update = row.insertCell(4);
+    // action.appendChild(createUpdateButton(id++));
     document.getElementById("Author").value = " ";
     document.getElementById("Title").value = " ";
     document.getElementById("Rating").value = " ";
     // const bookObject = document.getElementById('form').value;
-    const description = document.getElementById("Author", "Title", "Rating");
-    const book = {
-      Author: "Author",
-      Title: "Title",
-      Rating: "Rating",
-    };
+    // const description = document.getElementById("Author", "Title", "Rating");
+    // const book = {
+    //   Author: "Author",
+    //   Title: "Title",
+    //   Rating: "Rating",
+    // };
   });
 }
 
@@ -53,6 +56,17 @@ function createDeleteButton(id) {
   };
   return btn;
 }
+
+
+
+function editProduct(Author, Title, Rating){
+    // var productID = document.getElementById("productID").value || "none";
+    // var qty = document.getElementById("quantity").value || 0;
+
+    document.getElementById("Author").value = Author;
+    document.getElementById("Title").value = Title;
+    document.getElementById("Rating").value = Rating;    
+ }
 
 /* function createUpdateButton(id) {
   let updateBtn = document.createElement("updateBtn");
