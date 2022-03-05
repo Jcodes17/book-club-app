@@ -1,12 +1,22 @@
 // const books = [];
+
+console.log("starting book club crud");
+// console.log(bookData);
 var currentData = null;
+// current data set to null, representing the absence of any data/value
 var bookData = [];
 
+
+// 1st of two onsubmit functions for button "add"
 function onBookFormAdd() {
+  // function to start adding book data when the user clicks on add
+  // this is being called on the html file
   var bookData = readBookData();
   // will pull this data from the readBookData function
   if (currentData == null) {
+    // if currentData is null
     addBookData(bookData);
+    // will call the addBookData function w/ a parameter of bookData
     console.log("inserting book data");
   //} else {
   //   updateBookData(bookData);
@@ -16,17 +26,26 @@ function onBookFormAdd() {
   }
 }
 
-
+// 2nd of two onsubmit functions for button "update"
+// this is being called on the html file
 function onBookFormUpdate(){
   var bookData = readBookData();
   if (currentData != null){
+    // if there is already book data in our table on the browser
     updateBookData(bookData);
+    // will call the updateBookData function with bookData as the parameter
     resetBookData();
+    // next we will call the resetBookData fields to a blank slate for the user to input new info
     console.log("updated data");
   }
   currentData = null;
+  // setting our CurrentData back to null to prevent the browser from updating this data to the current cell/line that we just edited
+  // this will allow us to add new books to the table after an edit
 }
 
+
+// function to store our book data
+// still trying to work on this
 function bookArray (){
   var bookData2 = [];
   document.getElementById("Add").addEventListener("click", () => {
@@ -40,45 +59,35 @@ function bookArray (){
     return bookData2;
   })
 }
-// console.log(bookData2);
-
-// let teams = [];
-// let teamId = 0;
-
-// onClick('new-team', () => {
-//     teams.push(new Team(teamId++, getValue('new-team-name')));
-//     drawDOM();
-// })
-
-// function onClick(id, action) {
-//     let element = document.getElementById(id);
-//     element.addEventListener("click", action);
-//     return element;
-// }
 
 
 
-console.log("Testing");
-// console.log(bookData);
 
+// funtion to read
 function readBookData() {
   var bookData = [];
   bookData["Author"] = document.getElementById("Author").value;
-  // push values for bookData
+  // push Author value for bookData
   bookData["Title"] = document.getElementById("Title").value;
+    // push Title value for bookData
   bookData["Rating"] = document.getElementById("Rating").value;
+  // push Rating value for bookData
   // console.log(bookData);
   return bookData;
 }
 
+// function to reset all our input fields for author, title, rating
 function resetBookData() {
   // clear all input fields for better user experience
-  document.getElementById("Author").value = " ";
-  document.getElementById("Title").value = " ";
-  document.getElementById("Rating").value = " ";
-  selectedRow = null;
+  document.getElementById("Author").value = "";
+  document.getElementById("Title").value = "";
+  document.getElementById("Rating").value = "";
+  currentData = null;
+  // setting our CurrentData back to null to prevent the browser from updating this data to the current cell/line that we just edited
+  // this will allow us to add new books to the table after an edit
 }
 
+// function to add our bookdata our table
 function addBookData(data) {
   // document.getElementById("Add").addEventListener("click", () => {
   var table = document
@@ -97,12 +106,14 @@ function addBookData(data) {
   cell4.innerHTML = `<a onClick="editBookData(this)">Edit</a>
                     <a onClick="onDelete(this)">Delete</a>`;
   resetBookData();
+  // after adding book data to our table we will call the resetBookData to clear the input fields for better user experience
 }
 
 function editBookData(td) {
   currentData = td.parentElement.parentElement;
   // return corresponding row element
   confirm("Please make your edits.");
+  // this will cause the browser to display a pop up informing the user to make their edits
   document.getElementById("Author").value = currentData.cells[0].innerHTML;
   document.getElementById("Title").value = currentData.cells[1].innerHTML;
   document.getElementById("Rating").value = currentData.cells[2].innerHTML;
@@ -124,3 +135,18 @@ function onDelete(td) {
   }
 }
 
+// console.log(bookData2);
+
+// let teams = [];
+// let teamId = 0;
+
+// onClick('new-team', () => {
+//     teams.push(new Team(teamId++, getValue('new-team-name')));
+//     drawDOM();
+// })
+
+// function onClick(id, action) {
+//     let element = document.getElementById(id);
+//     element.addEventListener("click", action);
+//     return element;
+// }
