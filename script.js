@@ -42,6 +42,21 @@ function bookArray (){
 }
 // console.log(bookData2);
 
+// let teams = [];
+// let teamId = 0;
+
+// onClick('new-team', () => {
+//     teams.push(new Team(teamId++, getValue('new-team-name')));
+//     drawDOM();
+// })
+
+// function onClick(id, action) {
+//     let element = document.getElementById(id);
+//     element.addEventListener("click", action);
+//     return element;
+// }
+
+
 
 console.log("Testing");
 // console.log(bookData);
@@ -109,104 +124,3 @@ function onDelete(td) {
   }
 }
 
-// function addHtmlTableRow() {
-//   var table = document.getElementById("bookList"),
-//     newRow = table.insertRow(table.length),
-//     cell1 = newRow.insertCell(0),
-//     cell2 = newRow.insertCell(1),
-//     cell3 = newRow.insertCell(2),
-//     author = document.getElementById("Author").value,
-//     title = document.getElementById("Title").value,
-//     rating = document.getElementById("Rating").value;
-
-//   cell1.innerHTML = author;
-//   cell2.innerHTML = title;
-//   cell3.innerHTML = rating;
-// }
-
-// let action = row.insertCell(3);
-//     action.appendChild(createDeleteButton(id++));
-
-// function createDeleteButton(id) {
-//   let btn = document.createElement("button");
-//   btn.className = "btn btn-primary";
-//   btn.id = id;
-//   btn.innerHTML = "Delete";
-//   btn.onclick = () => {
-//     console.log(`Deleting row with id: item-${id}`);
-//     let elementToDelete = document.getElementById(`item-${id}`);
-//     elementToDelete.parentNode.removeChild(elementToDelete);
-//   };
-//   return btn;
-// }
-
-// function editProduct(Author, Title, Rating){
-//     // var productID = document.getElementById("productID").value || "none";
-//     // var qty = document.getElementById("quantity").value || 0;
-
-//     document.getElementById("Author").value = Author;
-//     document.getElementById("Title").value = Title;
-//     document.getElementById("Rating").value = Rating;
-//  }
-
-// // row.setAttribute("id", `item-${id}`);
-// row.insertCell(0).innerHTML = document.getElementById("Author").value;
-// row.insertCell(1).innerHTML = document.getElementById("Title").value;
-// row.insertCell(2).innerHTML = document.getElementById("Rating").value;
-// row.insertCell(3).innerHTML = '<button type="button" onClick="editProduct(\''+ Author+'\', \''+Title+'\', \''+Rating+'\');"/>Edit</button>';
-// let action = row.insertCell(3);
-// action.appendChild(createDeleteButton(id++));
-// let update = row.insertCell(4);
-// action.appendChild(createUpdateButton(id++));
-// document.getElementById("Author").value = " ";
-// document.getElementById("Title").value = " ";
-// document.getElementById("Rating").value = " ";
-// const bookObject = document.getElementById('form').value;
-// const description = document.getElementById("Author", "Title", "Rating");
-// const book = {
-//   Author: "Author",
-//   Title: "Title",
-//   Rating: "Rating",
-// };
-
-// console.log(books);
-
-// function editHtmlTbleSelectedRow() {
-//   var author = document.getElementById("Author").value,
-//     title = document.getElementById("Title").value,
-//     rating = document.getElementById("Rating").value;
-//   if (!checkEmptyInput()) {
-//     table.rows[rIndex].cells[0].innerHTML = Author;
-//     table.rows[rIndex].cells[1].innerHTML = Title;
-//     table.rows[rIndex].cells[2].innerHTML = Rating;
-//   }
-// }
-
-/* function createUpdateButton(id) {
-  let updateBtn = document.createElement("updateBtn");
-  updateBtn.className = "btn btn-primary";
-  updateBtn.id = id;
-  updateBtn.innerHTML = "Update";
-  updateBtn.onclick = () => {
-    console.log(`Update row with id: item-${id}`);
-    let elementToUpdate = document.getElementById(`item-${id}`);
-    elementToUpdate.parentNode.replaceChild(elementToUpdate);
-  };
-
-  return updateBtn;
-} */
-
-// function bookInfo() {
-//   const bookObject = document.getElementById("books").value;
-//   const description = document.getElementById("Author", "Title", "Rating");
-//   const book = {
-//     Author: Author,
-//     Title: Title,
-//     Rating: Rating,
-//   };
-//   console.log(bookObject);
-// }
-
-// var Author = document.getElementById("Author").value || "none";
-// var Title = document.getElementById("Title").value || 0;
-// var Rating = document.getElementById("Rating").value || 0;}
