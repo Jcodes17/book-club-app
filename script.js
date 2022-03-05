@@ -103,35 +103,49 @@ function addBookData(data) {
   cell3 = insertNewRow.insertCell(2);
   cell3.innerHTML = data.Rating;
   cell4 = insertNewRow.insertCell(3);
-  cell4.innerHTML = `<a onClick="editBookData(this)">Edit</a>
-                    <a onClick="onDelete(this)">Delete</a>`;
+  cell4.innerHTML = `<a onClick="editBookData(this)"><strong>Edit</strong></a>
+                    <a onClick="onDelete(this)"><strong>Delete</strong></a>`;
   resetBookData();
   // after adding book data to our table we will call the resetBookData to clear the input fields for better user experience
 }
 
+
+// function to editBookdata based on the td element from the html
 function editBookData(td) {
   currentData = td.parentElement.parentElement;
   // return corresponding row element
   confirm("Please make your edits.");
+  // confirm will display a dialog box w/ a message and an ok button and a cancel button
   // this will cause the browser to display a pop up informing the user to make their edits
   document.getElementById("Author").value = currentData.cells[0].innerHTML;
   document.getElementById("Title").value = currentData.cells[1].innerHTML;
   document.getElementById("Rating").value = currentData.cells[2].innerHTML;
 }
 
+
+// function to update bookdata based on the bookdata variable found in the readbookdata function above
 function updateBookData(bookData) {
   currentData.cells[0].innerHTML = bookData.Author;
+  // will update current data with new data from the author input field
   currentData.cells[1].innerHTML = bookData.Title;
+  // will update current data with new data from the title input field
   currentData.cells[2].innerHTML = bookData.Rating;
+  // will update current data with new data from the rating input field
   resetBookData();
+  // after adding book data to our table we will call the resetBookData to clear the input fields for better user experience
 }
 
+// function to delete a table based on a table data
 function onDelete(td) {
   if (confirm("Are you sure you would like to delete this record?")) {
+    // confirm will display a dialog box w/ a message and an ok button and a cancel button
     row = td.parentElement.parentElement;
     document.getElementById("bookList").deleteRow(row.rowIndex);
     confirm("Book deleted");
+    // confirm will display a dialog box w/ a message and an ok button and a cancel button
+    // this is display a message to inform the user that their row of data will be deleted
     resetBookData();
+    // after adding book data to our table we will call the resetBookData to clear the input fields for better user experience
   }
 }
 

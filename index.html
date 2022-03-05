@@ -14,15 +14,31 @@
   <body class="container" style="background-color: rgba(33, 33, 194, 0.2)">
     <h1 class="text-center"><i>Book Club Crud</i></h1>
     <br>
+    <br>
     <div class="container">
       <!-- <div class="row">
         <div class="col"> -->
           <h2 class="text-center">Add Your Book</h2>
         <!-- </div> -->
       </div>
+      <br>
+      <br>
       <table>
+        
         <tr>
           <td>
+            <div class="card text-black bg-info mb-3" style="width: 18rem;">
+              <div class="card-header text-center">
+                <strong>Key for this page:</strong>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item" style="color: black;"><strong>Add button = </strong>This add a new entry to the table below.</li>
+                <li class="list-group-item" style="color: black;"><strong>Update button = </strong>This will save any new changes to an entry.</li>
+                <!-- <li class="list-group-item">Vestibulum at eros</li> -->
+              </ul>
+            </div>
+
+          
             <!-- html for the form of our crud operations -->
             <form onsubmit="event.preventDefault(); onBookFormAdd(); onBookFormUpdate();" autocomplete="off">
               <!-- <form onsubmit="event.preventDefault(); onBookFormUpdate();" autocomplete="off"></form> -->
@@ -48,6 +64,7 @@
                 class="form-control"
                 id="Title"
                 placeholder="Book Title"
+                required
               />
             </div>
             <div class="form-group">
@@ -58,6 +75,7 @@
                 class="form-control"
                 id="Rating"
                 placeholder="Ratings"
+                required
               />
             </div>
              <!-- add button -->
@@ -65,20 +83,22 @@
 
              <!-- <button onclick="addHtmlTableRow()">Add</button> -->
              <button class="btn btn-primary btn-block" id="Add">Add</button>
+             <br>
              <button class="btn btn-success btn-block" id="Update">Update</button>
   
 
             <br />
             <br />
+      
 
            <!-- table to list our data -->
-           <table class="thead-dark" id="bookList" style="border: 5px solid">
+           <table class="thead-dark table-bordered table-hover" id="bookList" style="border: 5px solid">
             <thead>
               <tr>
-                <th scope="col">Author</th>
-                <th scope="col">Title</th>
-                <th scope="col">Rating</th>
-                <th scope="col">Action</th>
+                <th class="text-center">Author</th>
+                <th class="text-center">Title</th>
+                <th class="text-center">Rating</th>
+                <th class="text-center">Action</th>
               </tr>
             </thead>
             <tbody>
@@ -87,8 +107,11 @@
           </table>
           </td>
         </tr>
+       
       </table>
+      </div>
     </div>
+    
 
     <script src="./node_modules/jquery/dist/jquery.js"></script>
     <script src="./node_modules/bootstrap/dist/js/bootstrap.js"></script>
@@ -97,9 +120,7 @@
   <footer class="text-center text-lg-start">
     <!-- Copyright -->
     <div
-      class="text-center p-3 fixed-bottom"
-      style="background-color: rgba(119, 67, 67, 0.2)"
-    >
+      class="text-center p-3">
       © 2022 Copyright:
       <p1>Book Club Crud</p1>
     </div>
