@@ -1,18 +1,50 @@
 // const books = [];
 var currentData = null;
+var bookData = [];
 
 function onBookFormAdd() {
   var bookData = readBookData();
   // will pull this data from the readBookData function
   if (currentData == null) {
     addBookData(bookData);
-  } else {
-    updateBookData(bookData);
-    resetBookData();
+    console.log("inserting book data");
+  //} else {
+  //   updateBookData(bookData);
+  //   console.log("updating book data");
+  //   resetBookData();
+  // }
   }
 }
 
+
+function onBookFormUpdate(){
+  var bookData = readBookData();
+  if (currentData != null){
+    updateBookData(bookData);
+    resetBookData();
+    console.log("updated data");
+  }
+  currentData = null;
+}
+
+function bookArray (){
+  var bookData2 = [];
+  document.getElementById("Add").addEventListener("click", () => {
+    // document.getElementById("Author", "Title", "Rating").value(() => {
+    //   bookData.push(bookArray)
+    bookData2.push = document.getElementById("Author").value;
+  // push values for bookData
+    bookData2.push = document.getElementById("Title").value;
+    bookData2.push = document.getElementById("Rating").value;
+    //})
+    return bookData2;
+  })
+}
+// console.log(bookData2);
+
+
 console.log("Testing");
+// console.log(bookData);
 
 function readBookData() {
   var bookData = [];
@@ -20,6 +52,7 @@ function readBookData() {
   // push values for bookData
   bookData["Title"] = document.getElementById("Title").value;
   bookData["Rating"] = document.getElementById("Rating").value;
+  // console.log(bookData);
   return bookData;
 }
 
@@ -64,6 +97,7 @@ function updateBookData(bookData) {
   currentData.cells[0].innerHTML = bookData.Author;
   currentData.cells[1].innerHTML = bookData.Title;
   currentData.cells[2].innerHTML = bookData.Rating;
+  resetBookData();
 }
 
 function onDelete(td) {
@@ -75,20 +109,20 @@ function onDelete(td) {
   }
 }
 
-function addHtmlTableRow() {
-  var table = document.getElementById("bookList"),
-    newRow = table.insertRow(table.length),
-    cell1 = newRow.insertCell(0),
-    cell2 = newRow.insertCell(1),
-    cell3 = newRow.insertCell(2),
-    author = document.getElementById("Author").value,
-    title = document.getElementById("Title").value,
-    rating = document.getElementById("Rating").value;
+// function addHtmlTableRow() {
+//   var table = document.getElementById("bookList"),
+//     newRow = table.insertRow(table.length),
+//     cell1 = newRow.insertCell(0),
+//     cell2 = newRow.insertCell(1),
+//     cell3 = newRow.insertCell(2),
+//     author = document.getElementById("Author").value,
+//     title = document.getElementById("Title").value,
+//     rating = document.getElementById("Rating").value;
 
-  cell1.innerHTML = author;
-  cell2.innerHTML = title;
-  cell3.innerHTML = rating;
-}
+//   cell1.innerHTML = author;
+//   cell2.innerHTML = title;
+//   cell3.innerHTML = rating;
+// }
 
 // let action = row.insertCell(3);
 //     action.appendChild(createDeleteButton(id++));
@@ -175,4 +209,4 @@ function addHtmlTableRow() {
 
 // var Author = document.getElementById("Author").value || "none";
 // var Title = document.getElementById("Title").value || 0;
-// var Rating = document.getElementById("Rating").value || 0;
+// var Rating = document.getElementById("Rating").value || 0;}

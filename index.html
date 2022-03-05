@@ -24,7 +24,8 @@
         <tr>
           <td>
             <!-- html for the form of our crud operations -->
-            <form onsubmit="event.preventDefault(); onBookFormAdd();" autocomplete="off" >
+            <form onsubmit="event.preventDefault(); onBookFormAdd(); onBookFormUpdate();" autocomplete="off">
+              <!-- <form onsubmit="event.preventDefault(); onBookFormUpdate();" autocomplete="off"></form> -->
               <!-- autocomplete off will prevent the browser from trying to predict what the user will type based on past entries -->
               <!--event.preventDefault will stop the page from reloading and sending form data through the curie string/url parameter-->
               <!-- this should only work when the user clicks on the formSubmit -->
@@ -62,15 +63,16 @@
              <!-- add button -->
           
 
-             <button onclick="addHtmlTableRow()">Add</button>
+             <!-- <button onclick="addHtmlTableRow()">Add</button> -->
              <button class="btn btn-primary btn-block" id="Add">Add</button>
+             <button class="btn btn-success btn-block" id="Update">Update</button>
   
 
             <br />
             <br />
 
            <!-- table to list our data -->
-           <table class="table table-striped table-dark" id="bookList" style="border: 5px solid">
+           <table class="thead-dark"" id="bookList" style="border: 5px solid">
             <thead>
               <tr>
                 <th scope="col">Author</th>
