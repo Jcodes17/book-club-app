@@ -46,7 +46,7 @@ a {
   cursor: pointer;
   text-decoration: underline;
   margin-left: 20%;
-}
+} 
 label.validation-error {
   color: red;
   margin-left: 5px;
